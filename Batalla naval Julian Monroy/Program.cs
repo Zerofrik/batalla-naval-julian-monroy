@@ -7,11 +7,16 @@ namespace Batalla_naval_Julian_Monroy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("el barco va a estar horizontal o vertical? (horizontal 0 - Vertical 1)");
-            int posicionhv = Convert.ToInt32(Console.ReadLine());
-            int horizontal = 0, vertical = 1;
+            var yfilas = 10;
+            var xcolumnas = 10;
 
-            while (posicionhv > 1){
+            Console.WriteLine("el barco va a estar horizontal o vertical? (horizontal 0 - Vertical 1)");
+            int horizontal = 0, vertical = 1;
+            int posicionhv = Convert.ToInt32(Console.ReadLine());
+            
+
+            while (posicionhv > 1)
+            {
                 Console.WriteLine("Solo se acepta 0 o 1");
                 posicionhv = Convert.ToInt32(Console.ReadLine());
             } 
@@ -30,13 +35,6 @@ namespace Batalla_naval_Julian_Monroy
             string[] coordenadas = posicionbarco.Split(',');
 
 
-            int[,] tablero = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            var filas = tablero.GetLength(0);
-            var columnas = tablero.GetLength(1);
-
-            var yfilas = 10;
-            var xcolumnas = 10;
-
             for (int i = 0; i < yfilas; i++)
             {
                 for (int j = 0; j < xcolumnas; j++)
@@ -46,6 +44,32 @@ namespace Batalla_naval_Julian_Monroy
                 Console.WriteLine();
             }
             Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Ingrese las coordenadas del barco ");
+            string ataquebarco = (Console.ReadLine());
+
+            if (ataquebarco == posicionbarco);
+
+            {
+                for (int i = 0; i < yfilas; i++)
+                {
+                    for (int j = 0; j < xcolumnas; j++)
+                    { 
+                       Console.Write(" ~");
+                    }
+                    Console.WriteLine();
+                    if (i == 0)
+                    {
+                        Console.Write("0"); ;
+                    }
+                }
+                Console.WriteLine();
+                
+            }
+            
+
+            
         }
     }
 }
